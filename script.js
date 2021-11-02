@@ -23,6 +23,8 @@ for(let r of rows){
 
 }
 
+sortTableByPoints(document.querySelector('.results-table'))
+
 for(let c of tbl.querySelectorAll('td')){
   c.style.textAlign = "center"
   if(!c.classList.contains('points-total')){
@@ -80,4 +82,26 @@ for(let c of tbl.querySelectorAll('td')){
       c.style.fontStyle = "italic"
     }
   }
+}
+
+function sortTableByPoints(tab){
+  let rows = tab.querySelectorAll('tbody > tr')
+  let ordered = []
+
+  for(let r of rows){
+    ordered.push(r)
+  }
+
+  ordered.sort(function(a,b){
+    return Number(b.querySelector('th:nth-last-child(1)').innerText)-Number(a.querySelector('th:nth-last-child(1)').innerText)
+  })
+
+  tab.querySelector('tbody').innerHTML = ""
+  let x = 1
+  for(let r of ordered){
+    r.querySelector('.pos').innerText = x
+    tab.querySelector('tbody').appendChild(r)
+    x++
+  }
+
 }

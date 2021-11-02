@@ -1,3 +1,4 @@
+let points = [0,35,29,25,22,20,18,16,14,12,10,9,8,7,6,5,4,3,2,1,0]
 let tbl = document.querySelector('.results-table')
 let rows = tbl.querySelectorAll('tr')
 

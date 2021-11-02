@@ -51,7 +51,7 @@ for(let c of tbl.querySelectorAll('td')){
     c.style.fontWeight = "bold"
   }
 
-  if c.classList.contains('pole'){
+  if (c.classList.contains('pole')){
     c.style.fontStyle = "italic"
   }
 }

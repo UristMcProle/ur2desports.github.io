@@ -1,6 +1,8 @@
 let tbl = document.querySelector('.results-table')
 
 for(let c of tbl.querySelectorAll('td')){
+  c.style.textAlign = "center"
+  
 	switch(c.innerText.trim()){
 		case '1':
 			c.style.backgroundColor = "#FFFFBF"

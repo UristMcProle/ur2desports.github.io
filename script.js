@@ -3,7 +3,26 @@ let tbl = document.querySelector('.results-table')
 let rows = tbl.querySelectorAll('tr')
 
 for(let r of rows){
-  r.querySelector('th:nth-last-child(1)').className = "points-total"
+  let pts = r.querySelector('th:nth-last-child(1)')
+  if(!pts.classList.contains('header')){
+    pts.className = "points-total"
+    pts.innerText = ""
+
+    let total = 0;
+
+    for(let c of r.querySelectorAll('td')){
+      if(c.classList.contains('fl'))
+        total += 1;
+      if(c.innerText === 'R' || c.innerText.isEmpty()){
+        continue;
+      } else if (!isNaN(c.innerText)){
+        total += points[Number(c.innerText)]
+      }
+    }
+
+    pts.innerText = total;
+  }
+
 }
 
 for(let c of tbl.querySelectorAll('td')){

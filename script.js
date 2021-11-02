@@ -99,7 +99,21 @@ function sortTableByPoints(tab){
   tab.querySelector('tbody').innerHTML = ""
   let x = 1
   for(let r of ordered){
-    r.querySelector('.pos').innerText = x
+    let pos = r.querySelector('.pos')
+    pos.innerText = x
+    switch(x){
+      case '1':
+        pos.style.backgroundColor = "#FFFFBF"
+        break
+      case '2':
+        pos.style.backgroundColor = "#DFDFDF"
+        break
+      case '3':
+        pos.style.backgroundColor = "#FFDF9F"
+        break
+      default:
+        break
+    }
     tab.querySelector('tbody').appendChild(r)
     x++
   }

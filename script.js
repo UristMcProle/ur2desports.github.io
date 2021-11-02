@@ -2,7 +2,7 @@ let tbl = document.querySelector('.results-table')
 let rows = tbl.querySelectorAll('tr')
 
 for(let r of rows){
-  r.lastChild.className += " points-total"
+  r.querySelector('th:last-child').className = "points-total"
 }
 
 for(let c of tbl.querySelectorAll('td')){

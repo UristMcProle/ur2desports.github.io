@@ -13,9 +13,7 @@ for(let r of rows){
     for(let c of r.querySelectorAll('td')){
       if(c.classList.contains('fl'))
         total += 1;
-      if(c.innerText === 'R' || c.innerText.isEmpty()){
-        continue;
-      } else if (!isNaN(c.innerText)){
+      if (!isNaN(c.innerText)){
         total += points[Number(c.innerText)]
       }
     }

@@ -50,7 +50,7 @@ for(let c of tbl.querySelectorAll('td')){
   			break
   	}
 
-    if (c.classList.contains("p_dnf")){
+    if (c.classList.contains("pdnf")){
       c.style.backgroundColor = "#EFCFFF"
     }
 
